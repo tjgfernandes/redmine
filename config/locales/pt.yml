@@ -295,6 +295,8 @@ pt:
   setting_date_format: Formato da data
   setting_time_format: Formato do tempo
   setting_cross_project_issue_relations: Permitir relações entre tarefas de projectos diferentes
+  permission_manage_issue_assignment: Gerir atribuição de tarefas
+  permission_manage_status_only_for_owned_issues: Gerir estado das próprias tarefas
   setting_issue_list_default_columns: Colunas na lista de tarefas por omissão
   setting_repositories_encodings: Encodings dos repositórios
   setting_commit_logs_encoding: Encoding das mensagens de commit
