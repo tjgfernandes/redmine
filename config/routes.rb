@@ -183,6 +183,7 @@ ActionController::Routing::Routes.draw do |map|
       project_views.connect 'projects/:id/files/new', :action => 'add_file'
       project_views.connect 'projects/:id/versions/new', :action => 'add_version'
       project_views.connect 'projects/:id/categories/new', :action => 'add_issue_category'
+      project_views.connect 'projects/:id/organic_units/new', :action => 'add_issue_organic_unit'
       project_views.connect 'projects/:id/settings/:tab', :action => 'settings'
     end
 
@@ -200,6 +201,7 @@ ActionController::Routing::Routes.draw do |map|
       project_actions.connect 'projects/:id/files/new', :action => 'add_file'
       project_actions.connect 'projects/:id/versions/new', :action => 'add_version'
       project_actions.connect 'projects/:id/categories/new', :action => 'add_issue_category'
+            project_actions.connect 'projects/:id/organic_units/new', :action => 'add_issue_organic_unit'
       project_actions.connect 'projects/:id/activities/save', :action => 'save_activities'
     end
 

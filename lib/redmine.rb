@@ -37,13 +37,15 @@ Redmine::AccessControl.map do |map|
   map.project_module :issue_tracking do |map|
     # Issue categories
     map.permission :manage_categories, {:projects => [:settings, :add_issue_category], :issue_categories => [:edit, :destroy]}, :require => :member
+    # Issue organic units
+    map.permission :manage_organic_units, {:projects => [:settings, :add_issue_organic_unit], :issue_organic_units => [:edit, :destroy]}, :require => :member
     # Issues
     map.permission :view_issues, {:projects => :roadmap, 
                                   :issues => [:index, :changes, :show, :context_menu],
                                   :versions => [:show, :status_by],
                                   :queries => :index,
                                   :reports => :issue_report}
-    map.permission :add_issues, {:issues => [:new, :update_form]}
+    map.permission :add_issues, {:issues => [:new, :update_form]}    
     map.permission :edit_issues, {:issues => [:edit, :reply, :bulk_edit, :update_form]}
     map.permission :manage_issue_relations, {:issue_relations => [:new, :destroy]}
     map.permission :manage_issue_assignment, {}

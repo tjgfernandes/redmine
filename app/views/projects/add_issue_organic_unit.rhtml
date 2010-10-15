@@ -1,0 +1,6 @@
+<h2><%=l(:label_issue_organic_unit_new)%></h2>
+
+<% labelled_tabular_form_for :organic_unit, @organic_unit, :url => { :action => 'add_issue_organic_unit' } do |f| %>
+<%= render :partial => 'issue_organic_units/form', :locals => { :f => f } %>
+<%= submit_tag l(:button_create) %>
+<% end %>

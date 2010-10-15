@@ -1,0 +1,27 @@
+<% if @project.issue_organic_units.any? %>
+<table class="list">
+	<thead>
+	<th><%= l(:label_issue_organic_unit) %></th>
+	<th><%= l(:field_assigned_to) %></th>
+	<th></th>
+	</thead>
+	<tbody>
+<% for organic_unit in @project.issue_organic_units %>
+	<% unless organic_unit.new_record? %>
+	<tr class="<%= cycle 'odd', 'even' %>">
+    <td><%=h(organic_unit.name) %></td>
+    <td><%=h(organic_unit.assigned_to.name) if organic_unit.assigned_to %></td>
+    <td class="buttons">
+    	<%= link_to_if_authorized l(:button_edit), { :controller => 'issue_organic_units', :action => 'edit', :id => organic_unit }, :class => 'icon icon-edit' %>
+    	<%= link_to_if_authorized l(:button_delete), {:controller => 'issue_organic_units', :action => 'destroy', :id => organic_unit}, :method => :post, :class => 'icon icon-del' %>
+    </td>
+	</tr>
+	<% end %>
+<% end %>
+    </tbody>
+</table>
+<% else %>
+<p class="nodata"><%= l(:label_no_data) %></p>
+<% end %>
+
+<p><%= link_to_if_authorized l(:label_issue_organic_unit_new), :controller => 'projects', :action => 'add_issue_organic_unit', :id => @project %></p>

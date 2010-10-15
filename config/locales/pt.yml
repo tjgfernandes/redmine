@@ -208,6 +208,7 @@ pt:
   field_max_length: Tamanho máximo
   field_value: Valor
   field_category: Categoria
+  field_organic_unit: Unidade Orgânica
   field_title: Título
   field_project: Projecto
   field_issue: Tarefa
@@ -296,6 +297,7 @@ pt:
   setting_time_format: Formato do tempo
   setting_cross_project_issue_relations: Permitir relações entre tarefas de projectos diferentes
   permission_manage_issue_assignment: Gerir atribuição de tarefas
+  permission_manage_issue_organic_units: Gerir atribuição de Unidades Orgânicas
   permission_manage_status_only_for_owned_issues: Gerir estado das próprias tarefas
   setting_issue_list_default_columns: Colunas na lista de tarefas por omissão
   setting_repositories_encodings: Encodings dos repositórios
@@ -358,8 +360,11 @@ pt:
   label_issue_status_plural: Estados da tarefa
   label_issue_status_new: Novo estado
   label_issue_category: Categoria de tarefa
+  label_issue_organic_unit: Unidade Orgânica de tarefa
   label_issue_category_plural: Categorias de tarefa
+  label_issue_organic_units: Unidades Orgânicas de tarefa
   label_issue_category_new: Nova categoria
+  label_issue_organic_unit_new: Nova unidade orgânica
   label_custom_field: Campo personalizado
   label_custom_field_plural: Campos personalizados
   label_custom_field_new: Novo campo personalizado
@@ -698,8 +703,11 @@ pt:
   text_issue_updated: "Tarefa {{id}} foi actualizada por {{author}}."
   text_wiki_destroy_confirmation: Tem a certeza que deseja apagar este wiki e todo o seu conteúdo?
   text_issue_category_destroy_question: "Algumas tarefas ({{count}}) estão atribuídas a esta categoria. O que quer fazer?"
+  text_issue_organic_unit_destroy_question: "Algumas tarefas ({{count}}) estão atribuídas a esta unidade orgânica. O que quer fazer?"
   text_issue_category_destroy_assignments: Remover as atribuições à categoria
+  text_issue_organic_unit_destroy_assignments: Remover as atribuições à unidade orgânica
   text_issue_category_reassign_to: Re-atribuir as tarefas para esta categoria
+  text_issue_organic_unit_reassign_to: Re-atribuir as tarefas para esta unidade orgânica
   text_user_mail_option: "Para projectos não seleccionados, apenas receberá notificações acerca de coisas que está a observar ou está envolvido (ex. tarefas das quais foi o criador ou lhes foram atribuídas)."
   text_no_configuration_data: "Papeis, tipos de tarefas, estados das tarefas e workflows ainda não foram configurados.\nÉ extremamente recomendado carregar as configurações padrão. Será capaz de as modificar depois de estarem carregadas."
   text_load_default_configuration: Carregar as configurações padrão
@@ -716,6 +724,7 @@ pt:
   text_user_wrote: "{{value}} escreveu:"
   text_enumeration_destroy_question: "{{count}} objectos estão atribuídos a este valor."
   text_enumeration_category_reassign_to: 'Re-atribuí-los para este valor:'
+  text_enumeration_organic_unit_reassign_to: 'Re-atribuí-los para este valor:'
   text_email_delivery_not_configured: "Entrega por e-mail não está configurada, e as notificação estão desactivadas.\nConfigure o seu servidor de SMTP em config/email.yml e reinicie a aplicação para activar estas funcionalidades."
   
   default_role_manager: Gestor

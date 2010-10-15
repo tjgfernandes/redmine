@@ -154,6 +154,7 @@ class ProjectsController < ApplicationController
   def settings
     @issue_custom_fields = IssueCustomField.find(:all, :order => "#{CustomField.table_name}.position")
     @issue_category ||= IssueCategory.new
+    @issue_organic_unit ||= IssueOrganicUnit.new
     @member ||= @project.members.new
     @trackers = Tracker.all
     @repository ||= @project.repository
@@ -232,7 +233,37 @@ class ProjectsController < ApplicationController
       end
     end
   end
-	
+
+  
+  # Add a new issue organic unit to @project
+  def add_issue_organic_unit
+    @organic_unit = @project.issue_organic_units.build(params[:organic_unit])
+    if request.post?
+      if @organic_unit.save
+        respond_to do |format|
+          format.html do
+            flash[:notice] = l(:notice_successful_create)
+            redirect_to :action => 'settings', :tab => 'organic_units', :id => @project
+          end
+          format.js do
+            # IE doesn't support the replace_html rjs method for select box options
+            render(:update) {|page| page.replace "issue_organic_unit_id",
+              content_tag('select', '<option></option>' + options_from_collection_for_select(@project.issue_organic_units, 'id', 'name', @organic_unit.id), :id => 'issue_organic_unit_id', :name => 'issue[organic_unit_id]')
+            }
+          end
+        end
+      else
+        respond_to do |format|
+          format.html
+          format.js do
+            render(:update) {|page| page.alert(@organic_unit.errors.full_messages.join('\n')) }
+          end
+        end
+      end
+    end
+  end
+
+  
   # Add a new version to @project
   def add_version
     @version = @project.versions.build

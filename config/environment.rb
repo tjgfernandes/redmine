@@ -19,6 +19,9 @@ end
 
 Rails::Initializer.run do |config|
   # Settings in config/environments/* take precedence those specified here
+
+
+  config.action_controller.session = { :key => "_redmine_session", :secret => "380f50845598525f8c65cc47adef59dd"}
   
   # Skip frameworks you're not going to use
   # config.frameworks -= [ :action_web_service, :action_mailer ]
