@@ -362,7 +362,7 @@ pt:
   label_issue_category: Categoria de tarefa
   label_issue_organic_unit: Unidade Orgânica de tarefa
   label_issue_category_plural: Categorias de tarefa
-  label_issue_organic_units: Unidades Orgânicas de tarefa
+  label_issue_organic_unit_plural: Unidades Orgânicas de tarefa
   label_issue_category_new: Nova categoria
   label_issue_organic_unit_new: Nova unidade orgânica
   label_custom_field: Campo personalizado
